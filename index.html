@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a18" />
+  <meta name="description" content="Reino Infinito: aventura medieval procedural en WebXR para Meta Quest 2." />
+  <title>Reino Infinito — VR Medieval</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="world" aria-label="Mundo medieval tridimensional"></canvas>
+  <div id="vignette"></div>
+  <div id="hud">
+    <div class="brand"><span class="sigil">✧</span><div><strong>REINO INFINITO</strong><small>LAS TIERRAS OLVIDADAS</small></div></div>
+    <div id="coords">EXPLORANDO...</div>
+    <div id="crosshair">✦</div>
+    <div id="help"><b>ESCRITORIO</b> · Clic para mirar · WASD caminar · Ratón mirar · Shift correr · Esc liberar</div>
+    <div class="bottom"><span id="biome">✧ Valle de los antiguos</span><span id="chunks">Preparando terreno...</span></div>
+  </div>
+  <div id="intro">
+    <div class="panel">
+      <div class="crest">♜</div>
+      <div class="eyebrow">UN MUNDO SIN FRONTERAS</div>
+      <h1>REINO<br><em>INFINITO</em></h1>
+      <p>Camina entre bosques antiguos, cruza ríos y encuentra las ruinas de un reino olvidado. Cada paso descubre nuevas tierras.</p>
+      <button id="explore">EXPLORAR EL REINO <span>→</span></button>
+      <div class="intro-help">En Meta Quest 2, pulsa <b>ENTER VR</b> abajo a la derecha. Joystick izquierdo: caminar. Derecho: girar. La espada sigue tu mano derecha.</div>
+      <div id="loading">Generando el reino...</div>
+    </div>
+  </div>
+  <div id="error" role="alert" hidden></div>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
